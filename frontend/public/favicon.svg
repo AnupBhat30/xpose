@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><style>
+    #light-icon {
+      display: inline;
+    }
+    #dark-icon {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #light-icon {
+        display: none;
+      }
+      #dark-icon {
+        display: inline;
+      }
+    }
+  </style><g id="light-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1191)"><rect width="1000" height="1000" fill="#000000"></rect><g transform="matrix(2.2792022792022792,0,0,2.2792022792022792,100,126.21082621082621)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="351" height="328"><svg width="351" height="328" viewBox="0 0 351 328" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="351" height="328" fill="#0C0000"></rect>
+<path d="M29 100.602C105.223 197.301 113.294 140.893 107.802 100.602L49.7751 252.419L190.902 178.928L171.56 115.107C206.901 42.5823 265.979 -58.9518 219.557 115.107C173.136 289.165 268.51 279.173 322 252.419C273.764 209.549 196.92 128.645 275.435 147.984C373.579 172.159 7.50856 250.485 95.6235 294" stroke="url(#paint0_radial_35_9)" stroke-width="20" stroke-linecap="square"></path>
+<defs>
+<radialGradient id="paint0_radial_35_9" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(175.5 156.5) rotate(90) scale(137.5 146.5)">
+<stop stop-color="white"></stop>
+<stop offset="1" stop-color="#999999"></stop>
+</radialGradient>
+<clipPath id="SvgjsClipPath1191"><rect width="1000" height="1000" x="0" y="0" rx="350" ry="350"></rect></clipPath></defs>
+</svg></svg></g></g></svg></g><g id="dark-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1192)"><rect width="1000" height="1000" fill="#000000"></rect><g transform="matrix(2.2792022792022792,0,0,2.2792022792022792,100,126.21082621082621)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="351" height="328"><svg width="351" height="328" viewBox="0 0 351 328" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="351" height="328" fill="#0C0000"></rect>
+<path d="M29 100.602C105.223 197.301 113.294 140.893 107.802 100.602L49.7751 252.419L190.902 178.928L171.56 115.107C206.901 42.5823 265.979 -58.9518 219.557 115.107C173.136 289.165 268.51 279.173 322 252.419C273.764 209.549 196.92 128.645 275.435 147.984C373.579 172.159 7.50856 250.485 95.6235 294" stroke="url(#paint0_radial_35_9)" stroke-width="20" stroke-linecap="square"></path>
+<defs>
+<radialGradient id="paint0_radial_35_9" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(175.5 156.5) rotate(90) scale(137.5 146.5)">
+<stop stop-color="white"></stop>
+<stop offset="1" stop-color="#999999"></stop>
+</radialGradient>
+<clipPath id="SvgjsClipPath1192"><rect width="1000" height="1000" x="0" y="0" rx="350" ry="350"></rect></clipPath></defs>
+</svg></svg></g></g></svg></g></svg>

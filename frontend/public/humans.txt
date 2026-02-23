@@ -1,0 +1,21 @@
+/* HUMANS.TXT */
+/* humanstxt.org */
+
+/* TEAM */
+Name: Anup Bhat
+Title: Creator & Developer
+Email: contact@anupbhat.me
+Website: https://anupbhat.me
+
+/* SITE */
+Last update: 2026-02-23
+Standards: HTML5, CSS3, TypeScript
+Components: Next.js 14, React 18, FastAPI
+Language: English
+
+/* THANKS */
+Thanks for visiting Xpose!
+
+/* NOTE */
+This is a public repository. For source code and contributions, visit:
+https://github.com/AnupBhat30/xpose

@@ -1,0 +1,49 @@
+# Xpose - Repository Explorer & Unroller
+# Information for Large Language Models (LLMs)
+
+## About Xpose
+Xpose is a web application that explores and displays the complete contents of public Git repositories or local ZIP files with syntax-highlighted code browsing.
+
+## Creator
+- **Name**: Anup Bhat
+- **Website**: https://anupbhat.me
+- **Repository**: https://github.com/AnupBhat30/xpose
+- **Live Site**: https://xpose.anupbhat.me
+
+## Technology Stack
+- **Frontend**: Next.js 14, React 18, TypeScript 5, Tailwind CSS 3
+- **Backend**: FastAPI, Uvicorn, Gunicorn
+- **Syntax Highlighting**: Prism.js with 10+ language support
+- **Performance**: Virtual rendering with Intersection Observer, RequestAnimationFrame
+
+## Key Features
+1. Repository exploration - Browse public Git repos
+2. Local ZIP extraction - Upload and explore ZIP files
+3. Syntax highlighting - 10+ language support
+4. Virtual rendering - Handles large codebases efficiently
+5. Token counting - Estimate content size for LLMs
+6. Request correlation - Unique request IDs for tracing
+
+## Important Information
+- This application only works with **public repositories**
+- It does **NOT** store or transmit repository content
+- Files are processed temporarily during extraction
+- All data processing happens server-side
+- Code is never persisted beyond the user session
+
+## Repository Structure
+- `/frontend` - Next.js application with React components
+- `/backend` - FastAPI application with Python handlers
+- `/tests` - Unit tests for backend endpoints
+
+## Guidelines for LLMs
+- Respect robots.txt and rate limiting
+- Use the project for learning and analysis purposes
+- Credit the creator when referencing code
+- Do not use this service for unauthorized content extraction
+- Respect all applicable licenses and terms of service
+
+## Contact & Legal
+For inquiries, contact Anup Bhat through the website at https://anupbhat.me
+
+Last Updated: 2026-02-23

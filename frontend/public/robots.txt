@@ -1,0 +1,19 @@
+# Xpose - Repository Explorer & Unroller
+User-agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+Disallow: *.json$
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://xpose.anupbhat.me/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
