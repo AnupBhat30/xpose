@@ -304,6 +304,7 @@ export default function Page() {
   const [copyLabel, setCopyLabel] = useState("Copy All");
   const [openFolders, setOpenFolders] = useState<Set<string>>(new Set());
   const [viewerOpen, setViewerOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const panelsRef = useRef<HTMLDivElement | null>(null);
   const highlightCacheRef = useRef<Map<string, HighlightEntry>>(new Map());
   const hasSetInitialWidths = useRef(false);
@@ -335,6 +336,14 @@ export default function Page() {
   useEffect(() => {
     pingBackend();
   }, [pingBackend]);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)");
+    const handleChange = () => setIsDesktop(media.matches);
+    handleChange();
+    media.addEventListener("change", handleChange);
+    return () => media.removeEventListener("change", handleChange);
+  }, []);
 
   const fileMetaByPath = useMemo(() => {
     const map = new Map<string, FileRecord>();
@@ -1026,20 +1035,20 @@ export default function Page() {
                 )}
               </div>
 
-              <div className="sm:col-span-3 flex items-center gap-3">
+              <div className="sm:col-span-3 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <button
                   disabled={loading}
                   type="submit"
                   className={clsx(
-                    "inline-flex items-center justify-center rounded-[10px] bg-accent px-5 py-3 text-sm font-semibold text-[#0a0a0a] transition-colors duration-150 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60",
+                    "inline-flex w-full items-center justify-center rounded-[10px] bg-accent px-5 py-3 text-sm font-semibold text-[#0a0a0a] transition-colors duration-150 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 sm:w-auto",
                     loading && "cursor-wait opacity-80",
                   )}
                 >
-                  {loading ? "Unrolling…" : "Unroll Repo"}
+                  {loading ? "Unrolling…" : "Unroll"}
                 </button>
                 <div
                   className={clsx(
-                    "relative h-1 flex-1 overflow-hidden rounded-full bg-white/5 transition",
+                    "relative h-1 w-full flex-1 overflow-hidden rounded-full bg-white/5 transition sm:w-auto",
                     loading ? "opacity-100" : "opacity-0",
                   )}
                 >
@@ -1063,10 +1072,14 @@ export default function Page() {
 
           <main
             ref={panelsRef}
-            className="mt-6 grid gap-2"
-            style={{ gridTemplateColumns: `${leftWidth}px 8px minmax(0,1fr)` }}
+            className="mt-6 grid gap-4 lg:gap-2"
+            style={{
+              gridTemplateColumns: isDesktop
+                ? `${leftWidth}px 8px minmax(0,1fr)`
+                : "minmax(0,1fr)",
+            }}
           >
-            <section className="flex min-h-[70vh] flex-col rounded-2xl border border-borderSoft bg-surface p-4 shadow-soft">
+            <section className="flex min-h-[55vh] flex-col rounded-2xl border border-borderSoft bg-surface p-4 shadow-soft sm:min-h-[60vh] lg:min-h-[70vh]">
               <div className="flex items-center justify-between">
                 <p className="text-xs font-medium text-textSecondary">
                   File Tree
@@ -1075,9 +1088,9 @@ export default function Page() {
                   {selectedCount}/{selectableCount} selected
                 </span>
               </div>
-              <div className="mt-2 flex items-center justify-between text-[12px] text-textSecondary">
+              <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[12px] text-textSecondary">
                 <span>{files.length || 0} files</span>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <button
                     type="button"
                     onClick={handleSelectAll}
@@ -1151,8 +1164,8 @@ export default function Page() {
               <div className="h-full w-[2px] rounded-full bg-white/10 group-hover:bg-accent/60" />
             </div>
 
-            <section className="flex min-h-[70vh] flex-col rounded-2xl border border-borderSoft bg-surface p-4 shadow-soft">
-              <div className="flex items-center justify-between gap-3">
+            <section className="flex min-h-[55vh] flex-col rounded-2xl border border-borderSoft bg-surface p-4 shadow-soft sm:min-h-[60vh] lg:min-h-[70vh]">
+              <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="flex gap-2 rounded-[10px] border border-white/10 bg-[#0f0f0f] p-1">
                   <button
                     type="button"
