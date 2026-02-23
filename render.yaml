@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: xpose-backend
+    env: python
+    plan: free
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && gunicorn -c gunicorn.conf.py main:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: ALLOWED_ORIGINS
+        value: http://localhost:3000
+      - key: PORT
+        value: 8000
