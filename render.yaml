@@ -9,6 +9,6 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: ALLOWED_ORIGINS
-        value: http://localhost:3000
+        value: http://localhost:3000,http://xpose.anupbhat.com,https://xpose.anupbhat.com
       - key: PORT
         value: 8000
