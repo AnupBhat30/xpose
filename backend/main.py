@@ -60,19 +60,27 @@ def get_allowed_origins() -> List[str]:
     # Check both ALLOWED_ORIGINS and CORS_ORIGINS for backwards compatibility
     raw = os.getenv('ALLOWED_ORIGINS', '') or os.getenv('CORS_ORIGINS', '')
     raw = raw.strip()
-    if raw:
-        return [origin.strip() for origin in raw.split(',') if origin.strip()]
-    return [
+    default_origins = [
         'http://localhost:3000',
         'http://127.0.0.1:3000',
         'http://xpose.anupbhat.com',
-        'https://xpose.anupbhat.com'
+        'https://xpose.anupbhat.com',
     ]
+    configured_origins = [
+        origin.strip().rstrip('/')
+        for origin in raw.split(',')
+        if origin.strip()
+    ]
+    return sorted(set(default_origins + configured_origins))
+
+
+allowed_origins = get_allowed_origins()
+logger.info('Configured CORS origins: %s', ', '.join(allowed_origins))
 
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=get_allowed_origins(),
+    allow_origins=allowed_origins,
     allow_methods=['*'],
     allow_headers=['*']
 )
